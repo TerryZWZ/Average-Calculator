@@ -16,7 +16,7 @@ function findAverage() {
   let total = 0; // Total of all marks
   let average = 0; // Average of marks
   let inputAmount = 0; // Keep track of how many inputs there are
-  let weightVals = []; // Array to collect list of weighs
+  let weightVals = []; // Array to collect list of weights
   result = 0; // Final display result
   totalWeight = 0; // Total of the weight values
 
@@ -64,7 +64,7 @@ function findAverage() {
     trueMark = mark * weight;
     total += trueMark;
     average = total / totalWeight;
-    result = Math.round(average * 10) / 10; // Only display one decimal place of the mark
+    result = Math.round(average * 100) / 100; // Only display one decimal place of the mark
   }
 
   // If mark doesn't exist, displayed result is 0
@@ -75,7 +75,7 @@ function findAverage() {
   // Displaying result in HTML
   if (result == 0) {
     $(document).ready(function () {
-      $("#averageText").text("0.0%");
+      $("#averageText").text("0.00%");
     });
   }
 
@@ -136,7 +136,7 @@ function addInput() {
       })
     );
 
-    // Adding another set of 4 inputs
+    // Adding another set of inputs
     for (let x = 1; x <= inputCount; x++) {
 
       // Establishing id of weight and mark inputs
@@ -157,7 +157,7 @@ function addInput() {
           type: "text",
           class: "markInput",
           id: inputID,
-          maxlength: "4",
+          maxlength: "5",
         })
       );
 
@@ -168,7 +168,7 @@ function addInput() {
             type: "text",
             class: "weightInput",
             id: weightID,
-            maxlength: "4",
+            maxlength: "5",
             disabled: "true",
           })
         );
@@ -181,7 +181,7 @@ function addInput() {
             type: "text",
             class: "weightInput",
             id: weightID,
-            maxlength: "4",
+            maxlength: "5",
           })
         );
       }
