@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="overallAverage.js"></script>
+  <title>Average Calculator</title>
+  <meta name="description" content="Calculating Averages">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width = device-width, initial-scale = 1.0">
+</head>
+
+<body>
+  <div id=container>
+
+    <!-- Right Card -->
+    <div class="card" id="containerA">
+      <h1 id="title">Calculate Your Average</h1>
+
+      <!-- Inputs to collect marks -->
+      <div id="markContain">
+        <div class="child" id="set1">
+          <input class="markInput" id="mark1" type="text" maxlength="4" />
+          <input class="weightInput" id="weight1" type="text" disabled maxlength="4">
+
+          <input class="markInput" id="mark2" type="text" maxlength="4" />
+          <input class="weightInput" id="weight2" type="text" disabled maxlength="4">
+
+          <input class="markInput" id="mark3" type="text" maxlength="4" />
+          <input class="weightInput" id="weight3" type="text" disabled maxlength="4">
+
+          <input class="markInput" id="mark4" type="text" maxlength="4" />
+          <input class="weightInput" id="weight4" type="text" disabled maxlength="4">
+
+          <input class="markInput" id="mark5" type="text" maxlength="4" />
+          <input class="weightInput" id="weight5" type="text" disabled maxlength="4">
+        </div>
+      </div>
+    </div>
+
+    <br><br>
+
+    <!-- Left Card -->
+    <div class="card " id="containerB">
+
+      <!-- Buttons -->
+      <div class="cardElements">
+        <button id="addMark" type="button" onclick="addInput()">+</button><br><br> <!-- Button to add more inputs -->
+        <button id="calculateBtn" onclick="findAverage()">Calculate</button><br><br> <!-- Button to calculate average -->
+        <button onclick="addWeight()">Add Weighing</button> <!-- Button to add weight to averages -->
+      </div>
+
+      <!-- Displaying averages -->
+      <div class="cardElements">
+        <p id="averageTitle">Average:</p>
+        <p id="averageText">-%</p>
+      </div>
+
+      <!-- Score Needed -->
+      <div class="cardElements">
+        <p id="scoreTitle">Score Needed for:</p>
+        <div id="containerC">
+          <div id="needed">
+            <input id="scoreNeeded" type="text" maxlength="4" oninput="updateScore()"><br>
+            <input id="weightNeeded" type="text" maxlength="4" oninput="updateScore()" disabled>
+          </div>
+          <p id="scoreText">-%</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</body>
+
+</html>
